@@ -20,12 +20,12 @@ class APQueue {
 
     public void enqueue(int d) {
         Node newNode = new Node(d);
-        if (front == null || front.data >= d) {
+        if (front == null || front.data <= d) {
             newNode.next = front;
             front = newNode;
         } else {
             Node curr = front;
-            while (curr.next != null && curr.next.data < d) {
+            while (curr.next != null && curr.next.data > d) {
                 curr = curr.next;
             }
             newNode.next = curr.next;
